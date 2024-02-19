@@ -84,7 +84,7 @@ apply.addEventListener("click", function () {
     setInnerTextWithIdAndValue("grand-total", grandFinal);
     hide.classList.add("hidden");
   } else {
-    alert("Your coupon code isn't correct");
+    alert("Invalid coupon code!");
   }
 });
 
