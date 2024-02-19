@@ -5,14 +5,14 @@ const apply = document.getElementById("apply");
 
 let updateTotalPrice = 0;
 let seatCount = 0;
-var isSelected = false;
-var isTyped = false;
-var isPress = false;
+let isSelected = false;
+let isTyped = false;
+let isPress = false;
 
 for (const seat of seatButton) {
   seat.addEventListener("click", function () {
     if (seatCount < 4) {
-      seat.classList.add("btnBgColorChanged");
+      seat.classList.add("buttonBackgroundColor");
       seat.classList.add("text-white");
       seat.classList.remove("bg-[#F7F8F8]");
       seat.setAttribute("disabled", "");
@@ -47,8 +47,6 @@ for (const seat of seatButton) {
       div.append(p1, p2, p3);
       appendedSection.appendChild(div);
 
-      // const totalPriceTextValue = getInnerTextValueFromId('total-price')
-      // updateTotalPrice = updateTotalPrice + 550
       updateTotalPrice = seatCount * ticketPricePerSeat;
       setInnerTextWithIdAndValue("total-price", updateTotalPrice);
       const grandFinal = updateTotalPrice;
@@ -66,12 +64,8 @@ for (const seat of seatButton) {
   });
 }
 
-const hide = document.getElementById("hide-now");
 const hidePress = document.getElementById("hide-press");
-const hidePress1 = document.getElementById("hide-press-1");
-const hidePress2 = document.getElementById("hide-press-2");
-const hidePress3 = document.getElementById("hide-press-3");
-const hidePress4 = document.getElementById("hide-press-4");
+const hidePressFoot = document.getElementById("hide-press-foot");
 
 apply.addEventListener("click", function () {
   const new15Coupon = getInnerTextFromId("new15");
@@ -103,14 +97,11 @@ function pressCheck() {
   check();
 }
 
-const visiblePopup = document.getElementById("success-popup");
+const visiblePopup = document.getElementById("success-message");
 function check() {
   if (isSelected === true && isTyped === true && isPress === true) {
     visiblePopup.classList.remove("hidden");
     hidePress.classList.add("hidden");
-    hidePress1.classList.add("hidden");
-    hidePress2.classList.add("hidden");
-    hidePress3.classList.add("hidden");
-    hidePress4.classList.add("hidden");
+    hidePressFoot.classList.add("hidden");
   }
 }
