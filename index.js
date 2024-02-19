@@ -59,11 +59,12 @@ for (const seat of seatButton) {
         apply.removeAttribute("disabled");
       }
     } else {
-      alert("You can't select more seat!!!");
+      alert("Maximum number of seats has been occupied!");
     }
   });
 }
 
+const hide = document.getElementById("hide-now");
 const hidePress = document.getElementById("hide-press");
 const hidePressFoot = document.getElementById("hide-press-foot");
 
